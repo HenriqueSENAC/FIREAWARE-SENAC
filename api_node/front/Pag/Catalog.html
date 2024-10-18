@@ -1,29 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="CSS/CSSCatalog.css"> -->
-    <title>Document</title>
+    <title>Adicionar Item ao Catálogo</title>
 </head>
 <body>
-    <h2> Adcionar Item ao catalogo </h2>
-    <form action="#" enctype="multipart/form-data" id="formulario">
-        <label for="">Nome</label>
-        <Input type="text" id="nome" name="item_name">
+    <h2>Adicionar Item ao Catálogo</h2>
+    <form action="#" method="POST" enctype="multipart/form-data" id="formulario">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="item_name" required>
 
-        <label for="">Descrição</label>
-        <Input type="text" id="descrição" name="item_description">
+        <label for="descricao">Descrição</label>
+        <input type="text" id="descricao" name="item_description" required>
 
-        <label for="">Link/URL do Produto</label>
-        <Input type="text" id="link" name="item_link">
+        <label for="link">Link/URL do Produto</label>
+        <input type="url" id="link" name="item_link" required>
 
-        <label for="">Imagem</label>
-        <Input type="file" id="imagem" name="imagem">
+        <label for="imagem">Imagem</label>
+        <input type="file" id="imagem" name="imagem" accept="image/*" required>
 
-        <button id="handleSubmit">Enviar</button>
+        <button type="submit" id="handleSubmit">Enviar</button>
     </form>
 
-    </body>
-<script src="JS/JSCatalog.js"></script>
+    <script src="JS/JSCatalog.js"></script>
+</body>
 </html>

@@ -12,7 +12,6 @@ async function cadastrar(event) {
     } else {
         if (senhaAuth.trim() != senha.trim()) {
             PSWarningSignin();
-            // Simplesmente não quer funcionar!!! 
         } else {
             let data = { email, senha, cel }
             const response = await fetch('http://localhost:3005/api/store/user', {
@@ -21,10 +20,10 @@ async function cadastrar(event) {
                 body: JSON.stringify(data)
 
             });
-            window.location.replace("Login.html");
         }
     }
 }
+
 
 
 // Login
@@ -52,10 +51,13 @@ button.onclick = async function (e) {
 
         if (content.success) {
             alert("Login feito");
+            // Aqui vamos salvar uma flag indicando que o usuário está logado
+            localStorage.setItem('userLoggedIn', 'true'); // ou você pode salvar um token se o seu backend fornecer
             window.location.replace("../MainPage.html")
         } else {
             PSWarningLogin();
         }
+        
     }
 }
 

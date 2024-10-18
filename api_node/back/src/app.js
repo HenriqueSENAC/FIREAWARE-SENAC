@@ -9,6 +9,7 @@ const cors = require('cors');
 const path = require('path');
 const fs = require('fs');
 
+
 const fileupload = require('express-fileupload');
 
 // Ajuda a fazer upload de arquivos a partir do express
@@ -29,7 +30,7 @@ app.use(express.json());
 app.use(cors());
 app.use(fileupload());
 
-app.use('uploads', express.static(path.join(__dirname, "uploads")));
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Habilitar as rotas na aplicação
 app.use('/api/auth', loginRouter);

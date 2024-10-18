@@ -4,24 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/CSSCatalogList.css">
-    <title>Document</title>
+    <title>FireAware - Produtos</title>
 </head>
 <body>
+
+    <nav>
+        <img src="../Imgs/Logo.png">
+        <section class="nav-text inter-font">
+            <a href="MainPage.html"><i class="gg-home"> </i>Home</a>
+            <a href="#ajuda"><i class="gg-add"> </i>Ajuda</a>
+            <a href="LoginCadastro.html" id="paginaAtual"><i class="gg-list"> </i>Entrar</a>
+        </section>
+    </nav>
+    
     <div class="container">
         <h1>Produtos</h1>
-        <div class="catalog-list">
-
-            <!-- <div class="catalog-card">
-                <img src="../Imgs/sebastiao.png" alt="sebas">
-                <div class="info">
-                    <h2> Item 1</h2>
-                    <p> Descrição: lalala</p>
-                    <p> Link: lifeisroadblocks.com</p>
-                </div>
-            </div>  -->
-            
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Pesquisar..." class="search-input">
         </div>
+        <div class="catalog-list"></div>
     </div>
+    
+
+    <script src="JS/JSCatalogLista.js"></script>
 </body>
-<script src="JS/JSCatalogLista.js"></script>
 </html>

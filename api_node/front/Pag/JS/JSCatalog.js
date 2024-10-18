@@ -13,9 +13,24 @@ button.onclick = async function() {
 
     if(content.success) {
         alert("Success!")
+        e.preventDefault();
+        
     } else {
         alert("Não deu certo!!!")
         console.log(content.sql);
+        e.preventDefault();
     }
 }
 
+// AuthGuard para proteger páginas
+function checkAuth() {
+    const userLoggedIn = localStorage.getItem('userLoggedIn');
+
+    if (!userLoggedIn) {
+        // Se o usuário não estiver logado, redireciona para a página de login
+        window.location.replace("Login.html");
+    }
+}
+
+// Chame esta função em todas as páginas protegidas
+checkAuth();
