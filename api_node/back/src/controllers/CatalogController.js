@@ -81,6 +81,7 @@ async function getCatalog(request, response) {
     
 }
 
+
 module.exports = {
     storeCatalog,
     getCatalog
