@@ -17,6 +17,7 @@ const fileupload = require('express-fileupload');
 // Importar as rotas para serem executadas na aplicação
 const CatalogRouter = require('./routes/CatalogRouter');
 const loginRouter = require('./routes/loginRouter');
+const UserRouter = require('./routes/UserRouter');
 // Importar o pacote dotenv, gerenciador de variáveis de ambiente
 const dotenv = require('dotenv').config();
 // Instanciar o express na variável app
@@ -35,5 +36,6 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 // Habilitar as rotas na aplicação
 app.use('/api/auth', loginRouter);
 app.use('/api', CatalogRouter);
+app.use('/api/store', UserRouter);  
 
 module.exports = app;

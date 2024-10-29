@@ -26,13 +26,12 @@ async function cadastrar(event) {
 
 // // ShowPSSWRD
 function SignInFunction() {
-    var x = document.getElementById("senha");
-    if (x.type === "password") {
-        x.type = "text";
-    } else {
-        x.type = "password";
-    };
-};
+    let x = document.getElementById("senha");
+    let y = document.getElementById("senhaAuth");
+    x.type = x.type === "password" ? "text" : "password";
+    y.type = y.type === "password" ? "text" : "password";
+}
+    
 
 function PSWarningSignin() {
     var Warning = document.getElementById('error-signin');
