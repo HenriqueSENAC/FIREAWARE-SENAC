@@ -331,7 +331,6 @@ h1{
 
 /* Card Swipper */
 
-
 .card-wrapper {
   display: flex;
   flex-direction: row;
@@ -348,88 +347,61 @@ h1{
 
 .card-list .card-item {
   list-style: none;
+  height: 34vh;
 }
 .card-list .card-item .card-link {
-  display: block;
-  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--dark-mode);
   padding: 18px;
-  user-select: none;
   border-radius: 12px;
+  height: 18vw;
   text-decoration: none;
   border: 2px solid transparent;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
   transition: 0.2s ease;
 }
-.card-list .card-item .card-link:active {
-  cursor: grabbing;
-}
+
 .card-list .card-item .card-link:hover {
-  border-color: #5372F0;
+  border-color: var(--vermelho);
 }
 .card-list .card-link .card-image {
-  width: 100px;
+  background-color: var(--cinza);
+  height: 8vw;
+  width: 8vw;
   border-radius: 10px;
   aspect-ratio: 16 / 9;
   object-fit: cover;
 }
-.card-list .card-link .badge {
-  color: #5372F0;
-  width: fit-content;
-  padding: 8px 16px;
+.card-list .card-link {
+  color: var(--vermelho);
   font-size: 0.95rem;
   border-radius: 50px;
-  font-weight: 500;
-  background: #DDE4FF;
-  margin: 16px 0 18px;
+  background: var(--cinza);
 }
-.card-list .card-link .badge-designer {
-  color: #B22485;
-  background: #F7DFF5;
-}
-.card-list .card-link .badge-marketer {
-  color: #B25A2B;
-  background: #FFE3D2;
-}
-.card-list .card-link .badge-gamer {
-  color: #205C20;
-  background: #D6F8D6;
-}
-.card-list .card-link .badge-editor {
-  color: #856404;
-  background: #fff3cd;
-}
+
 .card-list .card-link .card-title {
   color: #000;
+  background-color: var(--cinza);
+  border-radius: 7%;
+  width: auto;
+  padding: 5px;
   font-size: 1.19rem;
   font-weight: 600;
 }
-.card-list .card-link .card-button {
-  height: 35px;
-  width: 35px;
-  color: #5372F0;
-  margin: 30px 0 5px;
-  background: none;
-  cursor: pointer;
-  border-radius: 50%;
-  border: 2px solid #5372F0;
-  transform: rotate(-45deg);
-  transition: 0.4s ease;
+
+h5{
+  margin: 0;
 }
+
 .card-list .card-link:hover .card-button {
   color: #fff;
-  background: #5372F0;
+  background: var(--vermelho);
 }
-.card-wrapper .swiper-pagination-bullet {
-  height: 13px;
-  width: 13px;
-  opacity: 0.5;
-  background: #5372F0;
-}
-.card-wrapper .swiper-pagination-bullet-active {
-  opacity: 1;
-}
+
 .card-wrapper .swiper-slide-button {
-  color: #5372F0;
+  color: var(--vermelho);
   margin-top: -35px;
 }
 /* Responsive media query code for small screens */
