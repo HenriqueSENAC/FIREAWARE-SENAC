@@ -237,7 +237,7 @@ nav {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 10%;
+  gap: 6%;
 }
 
 .Second-container{

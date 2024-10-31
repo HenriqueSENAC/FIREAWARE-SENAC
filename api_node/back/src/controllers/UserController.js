@@ -1,5 +1,5 @@
 // controllers/UserController.js
-const connection = require('../config/db')
+const db = require('../config/db')
 
 const registerUser = (req, res) => {
     const { email, senha, cel } = req.body;

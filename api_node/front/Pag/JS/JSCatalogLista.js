@@ -20,10 +20,10 @@ document.addEventListener('DOMContentLoaded', async () => {
                         // Cria o card principal
                         const card = document.createElement('div');
                         card.className = 'catalog-card';
-
+                      
                         // Cria e define a imagem
                         const img = document.createElement('img');
-                        img.src = `http://localhost:3005/uploads/${catalog.item_img}`;
+                        img.src = `http://localhost:3005/store/uploads/${catalog.item_img}`;
                         img.alt = catalog.item_name;
 
                         // Cria a div de informações do card
@@ -111,4 +111,4 @@ function checkAuth() {
 }
 
 // Chame esta função em todas as páginas protegidas
-checkAuth();
+// checkAuth();

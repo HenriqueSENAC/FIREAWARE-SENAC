@@ -20,6 +20,8 @@ async function cadastrar(event) {
                 body: JSON.stringify(data)
 
             });
+
+            //colocar window location
         }
     }
 }
