@@ -24,7 +24,7 @@ button.onclick = async function (e) {
             alert("Login feito");
             // Aqui vamos salvar uma flag indicando que o usuário está logado
             localStorage.setItem('userLoggedIn', 'true'); // ou você pode salvar um token se o seu backend fornecer
-            window.location.replace("../MainPage.html")
+            window.location.replace("MainPage.html")
         } else {
             PSWarningLogin();
         }

@@ -41,16 +41,16 @@ document.addEventListener('DOMContentLoaded', async () => {
 
                         // Cria o botão "..." para expandir/recolher o texto
                         const expandBtn = document.createElement('button');
-                        expandBtn.textContent = "...";
+                        expandBtn.textContent = "+";
                         expandBtn.className = "expand-btn";
 
                         expandBtn.addEventListener('click', () => {
                             if (description.classList.contains('expanded')) {
                                 description.classList.remove('expanded');
-                                expandBtn.textContent = "...";
+                                expandBtn.textContent = "+";
                             } else {
                                 description.classList.add('expanded');
-                                expandBtn.textContent = "↑";
+                                expandBtn.textContent = "-";
                             }
                         });
 
@@ -111,4 +111,4 @@ function checkAuth() {
 }
 
 // Chame esta função em todas as páginas protegidas
-// checkAuth();
+checkAuth();

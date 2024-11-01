@@ -21,7 +21,7 @@ async function cadastrar(event) {
 
             });
 
-            //colocar window location
+            window.location.replace("Login.html");
         }
     }
 }

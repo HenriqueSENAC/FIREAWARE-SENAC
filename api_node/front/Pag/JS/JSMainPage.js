@@ -42,11 +42,12 @@ document.addEventListener('DOMContentLoaded', async () => {
           const renderCatalog = (catalogData) => {
               cardWrapper.innerHTML = ''; // Limpa a lista antes de renderizar
 
-              // Cria o elemento <ul class="card-list swiper-wrapper">
+              // Cria o elemento <ul class="card-list">
               const cardList = document.createElement('ul');
-              cardList.className = 'card-list swiper-wrapper';
+              cardList.className = 'card-list';
 
-              catalogData.forEach(catalog => {
+              // Limita os itens a serem exibidos a 6
+              catalogData.slice(0, 6).forEach(catalog => {
                   const cardItem = document.createElement('li');
                   cardItem.className = 'card-item swiper-slide';
 

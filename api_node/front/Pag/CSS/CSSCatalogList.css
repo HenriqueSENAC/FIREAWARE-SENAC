@@ -245,12 +245,14 @@ h1 {
 }
 
 .expand-btn {
-    background: none;
-    border: none;
-    color: var(--vermelho);
+    background-color: var(--vermelho);
+    border-radius: 50%;
+    color: var(--dark-mode);
     cursor: pointer;
     font-size: 16px;
     margin-top: 5px;
+    width: 30px;
+    height: 30px;
 }
 
 /* FOOTER */

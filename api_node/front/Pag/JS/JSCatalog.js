@@ -33,4 +33,4 @@ function checkAuth() {
 }
 
 // Chame esta função em todas as páginas protegidas
-// checkAuth();
+checkAuth();
