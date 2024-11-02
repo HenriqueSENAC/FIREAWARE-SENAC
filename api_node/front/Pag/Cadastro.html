@@ -6,7 +6,7 @@
 
     <title>FireAware: Prevenção e Ajuda</title>
     <link rel="stylesheet" href="CSS/CSSLoginCadastro.css">
-    <link href="https://css.gg/css" rel="stylesheet"/>
+    <link rel="stylesheet" href="CSS/SymbolStorage.css"/>
 </head>
 <body class="inter-font">
 
@@ -23,7 +23,8 @@
     <section class="card-section inter-font">
         <div class="card2">
             <div class="card-topbar"> 
-                <h1>Cadastro</h1>
+                <i class="sign-in gg-profile"></i>
+                <h1 class="h1sign-in">Cadastro</h1>
             </div>
             
             <!-- INPUTS CADASTRO -->
@@ -31,13 +32,14 @@
             <!-- INPUTS DE SENHA -->
             <input type="password" name="TextInput" id="senha" placeholder="Senha">
             
+            
+            <input type="password" name="TextInput" id="senhaAuth" placeholder="Confirmar senha">
+            
             <p>
                 <!-- TOGGLE PSSW -->
                 <input type="checkbox" class="checkbox" onclick="SignInFunction()">
                 <h60> Mostrar senha</h60>
             </p>
-            
-            <input type="password" name="TextInput" id="senhaAuth" placeholder="Confirmar senha">
             
             <div class="PasswordWarning" id="error-signin">
                 <h60>Senhas não concidem!</h60>

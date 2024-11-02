@@ -47,14 +47,13 @@ document.addEventListener('DOMContentLoaded', async () => {
               cardList.className = 'card-list';
 
               // Limita os itens a serem exibidos a 6
-              catalogData.slice(0, 6).forEach(catalog => {
+              catalogData.slice(0, 4).forEach(catalog => {
                   const cardItem = document.createElement('li');
                   cardItem.className = 'card-item swiper-slide';
 
                   const cardLink = document.createElement('a');
                   cardLink.className = 'card-link';
-                  cardLink.href = catalog.item_link;
-                  cardLink.target = "_blank"; // Abre o link em uma nova aba
+                  cardLink.href = 'CatalogLista.html';
 
                   const img = document.createElement('img');
                   img.src = `http://localhost:3005/uploads/${catalog.item_img}`;

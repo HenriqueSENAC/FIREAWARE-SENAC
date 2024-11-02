@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                       
                         // Cria e define a imagem
                         const img = document.createElement('img');
-                        img.src = `http://localhost:3005/store/uploads/${catalog.item_img}`;
+                        img.src = `http://localhost:3005/uploads/${catalog.item_img}`;
                         img.alt = catalog.item_name;
 
                         // Cria a div de informações do card

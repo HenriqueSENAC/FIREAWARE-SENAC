@@ -1,12 +1,25 @@
 body{
     margin: 0;
     padding: 0;
-    background-color: var(--dark-mode);
+    background-image: url('../../Imgs/BackgroundMain.png');
+    background-repeat: repeat;
+    background-size: cover;
 }
 
 div{
     display: flex;
     flex-direction: column;
+}
+
+.universal{
+  align-items: center;
+}
+
+.background-cover{
+  background-color: var(--dark-mode);
+  position: relative;
+  width: 90%;
+  height: 100%;
 }
 
 ul{
@@ -33,7 +46,7 @@ ul{
     font-weight: 1;
     font-style: normal;
   } 
-
+  
 /* NAVBAR */
 nav {
     background-color: var(--cinza);
@@ -259,9 +272,9 @@ nav {
 .catalog-card-swiper{
   background: var(--cinza);
   border-radius: 10px;
-  width: 90vw;
+  width: 60vw;
   height: 50vh;
-  margin: 3% 0% 3% 0%;
+  margin: 0 0% 3% 0%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
@@ -332,6 +345,19 @@ h1{
   text-align: center;
   border-radius: 5px;  
 }
+
+.Sumario{
+  display: flex;
+  text-align: center;
+  align-self: center;
+  background-color: var(--vermelho);
+  color: var(--text-dm);
+  width: 50vw;
+  border-radius: 5px 5px 0 0;
+  font-size: 15px;
+  margin: 2% 0 0 0;
+}
+
 
 /* Card Swipper */
 
@@ -419,12 +445,25 @@ h5{
   }
 }
 
+/* MAPA */
+
+.map-path-container{
+  align-items: center;
+  padding: 5%;
+}
+
+.map-path{
+  background-color: var(--cinza);
+  width: 60vw;
+  height: 30vw;
+  border-radius: 10px;
+}
+
 /* Footer */
 
 .footer {
   background-color: var(--cinza);
   padding: 2% 5%;
-  margin: 10% 0 0 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -460,7 +499,6 @@ h5{
 }
 
 .footer-copyright {
-  margin-top: 10px;
   text-align: center;
   font-size: 14px;
 }

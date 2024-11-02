@@ -22,6 +22,7 @@ item_name varchar(255) not null,
 item_description varchar(255) not null,
 item_link varchar(255) not null,
 item_img BLOB not null
+created_at 
 );
 
 insert into catalog(id, item_name, item_description, item_link, item_img)
