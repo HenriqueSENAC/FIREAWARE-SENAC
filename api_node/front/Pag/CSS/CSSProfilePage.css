@@ -1,0 +1,181 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url('../../Imgs/BackgroundMain.png');
+    background-repeat: repeat;
+    background-size: cover;
+}
+
+div{
+    display: flex;
+    flex-direction: column;
+}
+
+.universal{
+  align-items: center;
+}
+
+.background-cover{
+  background-color: var(--dark-mode);
+  position: relative;
+  width: 90%;
+  height: 100%;
+}
+
+ul{
+  padding: 0;
+}
+
+/* CORE */
+:root{
+    --vermelho-escuro: #640404;
+    --vermelho: #790606;   
+    --cinza-escuro: #161616;
+    --cinza: #252525;
+    --cinza-claro: #474747;
+    --input: #ffffff;
+    --inputborder: #BABABA;
+    --preto: #000000;
+    --text-dm: #cecece;
+    --dark-mode: #121212;
+} 
+
+.inter-font {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 1;
+    font-style: normal;
+  } 
+
+/* NAVBAR */
+nav {
+    background-color: var(--cinza);
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 2px 0px 0 var(--cinza-escuro);
+    align-items: center;
+  }
+
+  .navFirstSection{
+    display: flex;
+    gap: 3%;
+  }
+
+  nav img{
+    height: 40%;
+    width: 40%;
+    align-self: center;
+    padding: 0 5% 0 5%;
+  }
+
+.nav-text{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    padding: 0px 5% 0px 0px;
+  }
+  
+  nav a {
+    color: #f2f2f2;
+    height: 80px;
+    text-decoration: none;
+    font-size: 18px;
+    align-items: center;
+    position: relative;
+    transition: all 0.4s;
+    display: flex;
+    flex-direction: row;
+  }
+
+  nav a i{
+    margin: 0px 10px 0px 0px;
+  }
+
+  #btnProfile{
+    display: flex;
+    justify-self: left;
+  }
+
+
+  
+  .paginaAtual {
+    color: var(--cinza-claro);
+    pointer-events: none;
+  }
+
+  nav a::after{
+    content: '';
+    height: 3px;
+    width: 100%;
+    color: var(--cinza-escuro);
+    opacity: 0;
+    display: flex;
+    position: absolute;
+    left: 0;
+    bottom: 3vh;
+    transition: all 0.2s;
+  }
+
+  nav a:hover{
+    color: var(--input);
+  }
+
+  nav a:active {
+    color: var(--cinza-escuro);
+  }
+
+/* Pag */
+
+.profileCard{
+    display: flex;
+    flex-direction: row;
+    justify-self: center;
+    align-items: center;
+    background-color: var(--cinza-escuro);
+    border-radius: 10px;
+    margin: 5vw;
+    width: 60%;
+    height: 30vw;
+}
+
+.profileSection{
+    display: flex;
+    width: 40%;
+    height: 28vw;
+}
+
+.photocard{
+    display: flex;
+    align-self: center;
+    width: 70%;
+    height: 25vw;
+    margin: 10%;
+    background-color: var(--cinza);
+}
+
+.PhotoSphere{
+    align-self: center;
+    background-color: var(--cinza-escuro);
+    width: 70%;
+    height: 12vw;
+    margin: 10% 0 0 0;
+    border-radius: 50%;
+}
+
+.profileSection2{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 60%;
+    height: 28vw;
+    background-color: var(--cinza);
+}
+
+.InfoInput{
+    width: 30vw;
+    height: 3vw;
+    background-color: red;
+    align-self: center;
+    
+}
+/* body II: eletric boogalo */
