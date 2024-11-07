@@ -36,15 +36,16 @@ nav {
   }
 
   nav img{
-    width: 12%;
-    margin: 1% 1% 1% 4%;
+    width: 11%;
+    height: 11%;
+    margin: 0% 1% 0% 2%;
   }
 
 .nav-text{
     display: flex;
     flex-direction: row;
     gap: 30px;
-    padding: 0 7% 0 0;
+    padding: 0 5% 0 5%;
   }
   
   nav a {
@@ -214,7 +215,7 @@ h60{
   font-weight: bold;
   font-size: 70%;
   color: red;
-  /* display: none; */
+  display: none;
 }
 
 .NoCredentials{

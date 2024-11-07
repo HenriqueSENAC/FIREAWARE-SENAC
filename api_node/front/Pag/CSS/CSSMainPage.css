@@ -46,7 +46,7 @@ ul{
     font-weight: 1;
     font-style: normal;
   } 
-  
+
 /* NAVBAR */
 nav {
     background-color: var(--cinza);
@@ -56,16 +56,23 @@ nav {
     align-items: center;
   }
 
+  .navFirstSection{
+    display: flex;
+    gap: 3%;
+  }
+
   nav img{
-    width: 12%;
-    margin: 1% 1% 1% 4%;
+    height: 50%;
+    width: 50%;
+    align-self: center;
+    padding: 0 5% 0 5%;
   }
 
 .nav-text{
     display: flex;
     flex-direction: row;
     gap: 30px;
-    padding: 0px 7% 0px 0px;
+    padding: 0px 5% 0px 0px;
   }
   
   nav a {
@@ -82,6 +89,11 @@ nav {
 
   nav a i{
     margin: 0px 10px 0px 0px;
+  }
+
+  #btnProfile{
+    display: flex;
+    justify-self: left;
   }
 
   #paginaAtual {
@@ -272,6 +284,7 @@ nav {
 .catalog-card-swiper{
   background: var(--cinza);
   border-radius: 10px;
+  justify-content: center;
   width: 60vw;
   height: 50vh;
   margin: 0 0% 3% 0%;
@@ -373,12 +386,10 @@ h1{
 .card-list{
   display: flex;
   flex-direction: row;
-  gap: 3vw;
 }
 
 .card-list .card-item {
   list-style: none;
-  height: 34vh;
 }
 .card-list .card-item .card-link {
   display: flex;
@@ -446,6 +457,18 @@ h5{
 }
 
 /* MAPA */
+
+.WarningBox{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: center;
+  background: var(--cinza-escuro);
+  color: var(--text-dm);
+  width: 100%;
+  height: 5vw;
+  border-radius: 10px;
+}
 
 #map{
   width: 50vw;

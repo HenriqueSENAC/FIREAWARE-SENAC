@@ -3,7 +3,7 @@ use db_fwpp;
 
 create table cadastro(
 id int primary key auto_increment, 
-email varchar(255) not null, 
+email varchar(255) not null unique, 
 senha varchar(255) not null,
 cel varchar(255) not null,
 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
@@ -21,8 +21,8 @@ id int primary key auto_increment,
 item_name varchar(255) not null,
 item_description varchar(255) not null,
 item_link varchar(255) not null,
-item_img BLOB not null
-created_at 
+item_img BLOB not null,
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 insert into catalog(id, item_name, item_description, item_link, item_img)

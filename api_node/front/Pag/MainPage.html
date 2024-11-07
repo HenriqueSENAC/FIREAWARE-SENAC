@@ -12,15 +12,20 @@
 <body>
         <!-- NAVBAR -->
         <nav>
-            <img src="../Imgs/Logo.png">
+            <section class="navFirstSection">
+                <img src="../Imgs/Logo.png">
+                <a href="#profile" class="inter-font" id="btnProfile"><i class="gg-profile"> </i> Perfil</a>
+            </section>
+
             <section class="nav-text inter-font">
-                <a href="#home" id="paginaAtual"><i class="gg-home"> </i>Home</a>
-                <a href="#ajuda"><i class="gg-add"> </i>Ajuda</a>
-                <a href="Cadastro.html"><i class="gg-list"> </i>Entrar</a>
+                <a href="#PaginaDePerfil" id="paginaAtual"><i class="gg-home"> </i>Home</a>
+                <a href="HelpPage.html"><i class="gg-add"> </i>Ajuda</a>
+                <a href="Login.html" id="btnEntrar"><i class="gg-list"> </i>Entrar</a>
+                <a onclick="logout()" id="btnSair"><i class="gg-log-out"> </i>Sair</a>
             </section>
         </nav>
 
-<div class="universal">        
+<div class="universal">
  <div class="background-cover">
           <h1 class="inter-font"> Bem vindo ao FireAware! </h1>
 
@@ -102,6 +107,10 @@
         <section class="thirdSection"> 
             <div class="catalog-card-swiper">
                 <div class="card-wrapper">
+
+                    <div id="LoginWarning" class="WarningBox">
+                        <div class="inter-font" id="LoginWarning"> Não há items disponiveis no momento!</div>
+                    </div>    
                     <!-- 
                         <ul class="card-list swiper-wrapper">
                             <li class="card-item swiper-slide">

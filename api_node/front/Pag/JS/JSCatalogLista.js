@@ -112,3 +112,9 @@ function checkAuth() {
 
 // Chame esta função em todas as páginas protegidas
 checkAuth();
+
+// Função para deslogar o usuário
+function logout() {
+    localStorage.removeItem('userLoggedIn');
+    window.location.replace("Login.html");
+  }

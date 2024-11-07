@@ -13,15 +13,19 @@ async function cadastrar(event) {
         if (senhaAuth.trim() != senha.trim()) {
             PSWarningSignin();
         } else {
-            let data = { email, senha, cel }
-            const response = await fetch('http://localhost:3005/api/store/user', {
-                method: "POST",
-                headers: { "Content-type": "application/json;charset=UTF-8" },
-                body: JSON.stringify(data)
-
-            });
-
-            window.location.replace("Login.html");
+               let data = { email, senha, cel }
+               const response = await fetch('http://localhost:3005/api/store/user', {
+                   method: "POST",
+                   headers: { "Content-type": "application/json;charset=UTF-8" },
+                   body: JSON.stringify(data)
+   
+               });
+               console.log(response.status);
+               if(response.status == 201){
+                   window.location.replace("Login.html");
+               } else if (response.status == 500) {
+                EMailWarningSignin();
+               }
         }
     }
 }
