@@ -8,7 +8,7 @@ button.onclick = async function (e) {
 
 
     if (email.trim() === '' || senha.trim() === '') {
-        alert('Credenciais incorretas');
+        NoCredentials();
     } else {
         let data = { email, senha }
 
@@ -21,7 +21,6 @@ button.onclick = async function (e) {
         let content = await response.json();
 
         if (content.success) {
-            alert("Login feito");
             // Aqui vamos salvar uma flag indicando que o usuário está logado
             localStorage.setItem('userLoggedIn', 'true'); // ou você pode salvar um token se o seu backend fornecer
             window.location.replace("MainPage.html")
@@ -54,5 +53,17 @@ function PSWarningLogin() {
         }, 5000);
     } else {
         Warning.style.display = 'none';
+    }
+};
+
+function NoCredentials() {
+    var Warning3 = document.getElementById('alert-credential-signin');
+    if (Warning3.style.display === 'none') {
+        Warning3.style.display = 'block';
+        setTimeout(function () {
+            Warning3.style.display = 'none';
+        }, 5000);
+    } else {
+        Warning3.style.display = 'none';
     }
 };

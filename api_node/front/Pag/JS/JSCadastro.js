@@ -8,7 +8,7 @@ async function cadastrar(event) {
     let cel = document.getElementById("cel").value;
 
     if (email.trim() === '' || senha.trim() === '' || cel.trim() === '') {
-        alert('Porfavor preencha os campos necessários!');
+        NoCredentials();
     } else {
         if (senhaAuth.trim() != senha.trim()) {
             PSWarningSignin();
@@ -44,5 +44,29 @@ function PSWarningSignin() {
         }, 5000);
     } else {
         Warning.style.display = 'none';
+    }
+};
+
+function EMailWarningSignin() {
+    var Warning2 = document.getElementById('error-email-signin');
+    if (Warning2.style.display === 'none') {
+        Warning2.style.display = 'block';
+        setTimeout(function () {
+            Warning2.style.display = 'none';
+        }, 5000);
+    } else {
+        Warning2.style.display = 'none';
+    }
+};
+
+function NoCredentials() {
+    var Warning3 = document.getElementById('alert-credential-signin');
+    if (Warning3.style.display === 'none') {
+        Warning3.style.display = 'block';
+        setTimeout(function () {
+            Warning3.style.display = 'none';
+        }, 5000);
+    } else {
+        Warning3.style.display = 'none';
     }
 };

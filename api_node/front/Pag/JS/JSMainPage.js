@@ -92,3 +92,30 @@ document.addEventListener('DOMContentLoaded', async () => {
       console.log('Erro ao carregar os dados:', err);
   }
 });
+
+// INTEGRAÇÃO DO MAPA
+
+// Inicializa o mapa
+const map = L.map('map').setView([-29.796523747827955, -51.15286481646456], 16);
+
+const layer = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+});
+layer.addTo(map);
+
+
+// LOCALIZAÇÕES UTEIS
+
+var marker = L.marker([-29.803457948306125, -51.1562964548087]).addTo(map);
+marker.bindPopup("<b>INSTALFIRE</b><br>Soluções contra Incêndio.").openPopup();
+var marker = L.marker([-29.811872626822254, -51.147364946097696]).addTo(map);
+marker.bindPopup("<b>Projetos EVITARE</b><br>Serviços de prevenção contra Incêndio").openPopup();
+var marker = L.marker([-29.78014249567775, -51.141013475297676]).addTo(map);
+marker.bindPopup("<b>GURI</b><br>Sistemas Contra Incêndio").openPopup();
+var marker = L.marker([-29.782322740493512, -51.128869065003016]).addTo(map);
+marker.bindPopup("<b>ECI-Equipamentos</b><br>Loja de equipamentos contra Incêndio").openPopup();
+var marker = L.marker([-29.81866924122059, -51.16079807495008]).addTo(map);
+marker.bindPopup("<b>Sul Brasil Extintores</b><br>Loja de equipamentos contra Incêndio").openPopup();
+
+
+layer.addTo(map)

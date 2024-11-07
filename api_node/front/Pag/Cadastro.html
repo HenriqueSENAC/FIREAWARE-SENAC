@@ -29,6 +29,11 @@
             
             <!-- INPUTS CADASTRO -->
             <input type="email" name="TextInput" id="email" placeholder="E-mail">
+
+            <div class="EmailWarning" id="error-email-signin">
+                <h60>Email ja cadastrado!</h60>
+            </div>
+
             <!-- INPUTS DE SENHA -->
             <input type="password" name="TextInput" id="senha" placeholder="Senha">
             
@@ -47,10 +52,16 @@
             
                 <input type="phone" name="TextInput" id="cel" placeholder="N° de celular">
 
+                <div class="NoCredentials" id="alert-credential-signin">
+                    <h60>Porfavor preencha os campos necessários!</h60>
+                </div>
+
             <form class="form">
                 <button class="buttonAltMargin buttonCadastro" onclick="cadastrar(event)">Cadastrar-se</button>
                 <a href="Login.html" class="login-redirect">Possui uma conta?</a>
             </form>
+
+
 
         </div>
             <div>

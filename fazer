@@ -1,10 +1,19 @@
-modificar de blob para varchar(255)
+<!-- modificar de blob para varchar(255)
 modificar a inserção do nome da imagem apenas para o nome da imagem 
 modificar a busca da imagem para a pasta do upload
+>não precisa mais -->
 
-limite de 6 cards na demo! V
+<!-- limite de 6 cards na demo!
+>feito -->
 
 https://www.youtube.com/watch?v=7X4smfQ0dUE MAPA PORRA
+>mapa feito mas falta !adcionar os locais pelo js! e mais uma tabela
+
+remover todos alerts e trocar por customizados
+>meio feito, não sei fazer verificação de email
+
+botão de deslogar e customização de perfil
+>facil de fazer, faz logo desgraçado
 
 pagina de ajudas
-
+>outro bgl facil de fazer (a não ser q tu faça tabela junto ai fudeu)

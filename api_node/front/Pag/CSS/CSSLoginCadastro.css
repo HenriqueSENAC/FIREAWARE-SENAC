@@ -207,6 +207,36 @@ h60{
   display: none;
 }
 
+.EmailWarning{
+  width: 100%;
+  margin: 1% 1% 1% 5%;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 70%;
+  color: red;
+  /* display: none; */
+}
+
+.NoCredentials{
+  width: 100%;
+  margin: 1% 1% 1% 5%;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 70%;
+  color: white;
+  display: none;  
+}
+/* 
+  .HiddenMessage{
+    width: 100%;
+    margin: 1% 1% 1% 5%;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 70%;
+    color: red;
+    display: none;
+  } */
+
 /* INPUTS */
 input[name=TextInput] {
   height: 35px;
