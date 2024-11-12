@@ -22,21 +22,31 @@
         </section>
     </nav>
 
-    <div class="profileCard">
-        <section class="profileSection">
-            <div class="photocard">
-                <img src="" alt="" class="PhotoSphere">
+    <div class="universal">
+        <div class="background-cover">
+            <h1 class="inter-font">Configurações de Perfil</h1>
+            <div class="profileCard">
+                <section class="profileSection">
+                    <div class="photocard">
+                        <img src="../Imgs/NoProfilePic.png" alt="" class="PhotoSphere">
+                    </div>
+                </section>
+                <section class="profileSection2 inter-font">
+                    <div class="infoForms">
+                        <form class="InfoInput" id="NameForm">Email: <span id="emailField">NOME</span><button class="fa-regular fa-pen-to-square"></button></form>
+                    
+                        <form class="InfoInput" id="PasswordForm">Senha: <span id="senhaField">SENHA</span><button class="fa-regular fa-pen-to-square"></button></form>
+                    
+                        <form class="InfoInput" id="PhoneForm">Celular: <span id="celField">CELULAR</span><button class="fa-regular fa-pen-to-square"></button></form>
+                    
+                        <form class="accountInfo" id="creationDate">Data de Criação: <span id="creationDateField">DATA</span></form>
+                    </div>                    
+                </section>
             </div>
-        </section>
-        <section class="profileSection2 inter-font">
-            <form class="InfoInput" id="NameForm">TESTE1<button class="fa-regular fa-pen-to-square"></button></form>
-
-            <form class="InfoInput" id="PasswordForm">TESTE2<button class="fa-regular fa-pen-to-square"></button></form>
-                
-            <form class="InfoInput" id="PhoneForm">TESTE3<button class="fa-regular fa-pen-to-square"></button></form>
-        </section>
+        </div>
     </div>
     <script src="https://kit.fontawesome.com/ae87d6cca0.js" crossorigin="anonymous"></script>
+    <script src="JS/JSProfilePage.js"></script>
 </body>
 
 </html>

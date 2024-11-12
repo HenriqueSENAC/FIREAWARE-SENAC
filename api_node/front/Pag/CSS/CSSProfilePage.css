@@ -18,8 +18,10 @@ div{
 .background-cover{
   background-color: var(--dark-mode);
   position: relative;
+  margin: 4% 0 0 0;
+  border-radius: 10px;
   width: 90%;
-  height: 100%;
+  height: 50vw;
 }
 
 ul{
@@ -126,14 +128,23 @@ nav {
 
 /* Pag */
 
+h1{
+  color: var(--text-dm);
+  background-color: var(--cinza);
+  width: 28%;
+  padding: 1%;
+  margin: 3% 0 0 5%;
+  border-radius: 10px;
+}
+
 .profileCard{
     display: flex;
     flex-direction: row;
-    justify-self: center;
-    align-items: center;
+    align-items: center; /* coisa aq */
+    align-self: center;
     background-color: var(--cinza-escuro);
     border-radius: 10px;
-    margin: 5vw;
+    margin: 5%;
     width: 60%;
     height: 30vw;
 }
@@ -157,7 +168,7 @@ nav {
 .PhotoSphere{
     align-self: center;
     background-color: var(--cinza-escuro);
-    width: 70%;
+    width: 80%;
     height: 12vw;
     margin: 10% 0 0 0;
     border-radius: 50%;
@@ -166,17 +177,21 @@ nav {
 .profileSection2{
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
-    gap: 30px;
-    
     width: 60%;
     height: 28vw;
+}
+
+.infoForms{
+  display: flex;
+  align-items: center;
+  gap: 10%;
+  padding: 5% 0 0 0;
+  height: 100%;
 }
 
 .InfoInput{
     display: flex;
     align-items: center;
-    align-self: center;
     background-color: var(--cinza);
     color: var(--text-dm);
     padding: 0 0 0 2%;
@@ -191,4 +206,12 @@ nav {
     border: none;
     background: none;
 }
-/* body II: eletric boogalo */
+
+.accountInfo{
+  display: flex;
+  width: 90%;
+  height: 30%;
+  border-radius: 10px;
+  background-color: var(--cinza);
+  color: var(--text-dm);
+}
