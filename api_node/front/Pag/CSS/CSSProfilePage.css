@@ -99,7 +99,6 @@ nav {
   }
 
 
-  
   .paginaAtual {
     color: var(--cinza-claro);
     pointer-events: none;
@@ -157,12 +156,19 @@ h1{
 
 .photocard{
     display: flex;
-    align-self: center;
+    align-items: flex-start;
     width: 70%;
     height: 25vw;
     margin: 10%;
     border-radius: 10px;
     background-color: var(--cinza);
+}
+
+.EditOption{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
 }
 
 .PhotoSphere{
@@ -172,9 +178,22 @@ h1{
     height: 12vw;
     margin: 10% 0 0 0;
     border-radius: 50%;
+  }
+  
+.fa-regular{
+      color: var(--text-dm);
+      background-color: var(--cinza-claro);
+      padding: 4%;
+      margin: 0 3% 0 7%;
+      border-radius: 10px;
+      border-color: var(--cinza-escuro)
 }
 
-.profileSection2{
+h3.inter-font{
+  color: var(--text-dm);
+}
+  
+  .profileSection2{
     display: flex;
     flex-direction: column;
     width: 60%;
@@ -200,11 +219,20 @@ h1{
     height: 3vw;
 }
 
-.fa-regular{
-    padding: 0 0 3px 5px;
-    color: var(--text-dml);
-    border: none;
-    background: none;
+.Field{
+  margin: 0 0 0 3%;
+}
+
+.edit-input {
+  display: flex;
+  background-color: var(--cinza);
+  border-color: var(--cinza-escuro);
+  color: var(--text-dm);
+  border-radius: 10px;
+  margin: 0 0 0 3%;
+  padding: 0 0 0 3%;
+  width: 70%;
+  height: 50%;
 }
 
 .accountInfo{
