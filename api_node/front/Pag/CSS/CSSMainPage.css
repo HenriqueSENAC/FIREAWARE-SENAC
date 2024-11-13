@@ -366,6 +366,7 @@ h1{
   background-color: var(--vermelho);
   color: var(--text-dm);
   width: 50vw;
+  padding: 0 1% 0 1%;
   border-radius: 5px 5px 0 0;
   font-size: 15px;
   margin: 2% 0 0 0;
@@ -391,7 +392,7 @@ h1{
 .card-list .card-item {
   list-style: none;
   padding: 10px;
-  width: 30%;
+  width: 100%;
   height: 50%;
 }
 .card-list .card-item .card-link {
