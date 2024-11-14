@@ -78,19 +78,40 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 });
 
-// Mapa interativo
+// JSMainPage.js
+
+// Inicialização do mapa
 const map = L.map('map').setView([-29.796523747827955, -51.15286481646456], 16);
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19 }).addTo(map);
-const markerData = [
-  { coords: [-29.803457948306125, -51.1562964548087], popup: "<b>INSTALFIRE</b><br>Soluções contra Incêndio." },
-  { coords: [-29.811872626822254, -51.147364946097696], popup: "<b>Projetos EVITARE</b><br>Serviços de prevenção contra Incêndio" },
-  { coords: [-29.78014249567775, -51.141013475297676], popup: "<b>GURI</b><br>Sistemas Contra Incêndio" },
-  { coords: [-29.782322740493512, -51.128869065003016], popup: "<b>ECI-Equipamentos</b><br>Loja de equipamentos contra Incêndio" },
-  { coords: [-29.81866924122059, -51.16079807495008], popup: "<b>Sul Brasil Extintores</b><br>Loja de equipamentos contra Incêndio" }
+
+// Marcadores iniciais embutidos
+const initialMarkers = [
+    { coords: [-29.803457948306125, -51.1562964548087], popup: "<b>INSTALFIRE</b><br>Soluções contra Incêndio." },
+    { coords: [-29.811872626822254, -51.147364946097696], popup: "<b>Projetos EVITARE</b><br>Serviços de prevenção contra Incêndio" },
+    { coords: [-29.78014249567775, -51.141013475297676], popup: "<b>GURI</b><br>Sistemas Contra Incêndio" },
+    { coords: [-29.782322740493512, -51.128869065003016], popup: "<b>ECI-Equipamentos</b><br>Loja de equipamentos contra Incêndio" },
+    { coords: [-29.81866924122059, -51.16079807495008], popup: "<b>Sul Brasil Extintores</b><br>Loja de equipamentos contra Incêndio" }
 ];
-markerData.forEach(({ coords, popup }) => {
-  L.marker(coords).addTo(map).bindPopup(popup);
-});
+
+// Função para adicionar marcadores ao mapa
+function addMarkersToMap(markers) {
+    markers.forEach(({ coords, popup }) => {
+        L.marker(coords).addTo(map).bindPopup(popup);
+    });
+}
+
+// Adiciona os marcadores iniciais
+addMarkersToMap(initialMarkers);
+
+// Carrega e adiciona os marcadores salvos no localStorage
+function loadMarkersFromLocalStorage() {
+    const storedMarkers = JSON.parse(localStorage.getItem('markers')) || [];
+    addMarkersToMap(storedMarkers);
+}
+
+// Carrega os marcadores do localStorage ao abrir a página
+loadMarkersFromLocalStorage();
+
 
 // Função para deslogar o usuário
 function logout() {

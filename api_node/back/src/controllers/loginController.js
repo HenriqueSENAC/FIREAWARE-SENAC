@@ -13,7 +13,6 @@ async function login(request, response) {
     const params = Array(
         request.body.email
     );
-        // console.log("to aqui")
     // Executa a ação no banco e valida os retornos para o client que realizou a solicitação
     connection.query(query, params, (err, results) => {
         try {            

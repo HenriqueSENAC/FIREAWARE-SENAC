@@ -10,15 +10,25 @@
     <h2>Adicionar Item ao Catálogo</h2>
     <form action="#" method="POST" enctype="multipart/form-data" id="formulario">
         <input type="text" id="nome" name="item_name" placeholder="Nome" required>
-
         <input type="text" id="descricao" name="item_description" placeholder="Descrição" required>
-
         <input type="url" id="link" name="item_link" placeholder="Link/URL" required>
-        
         <input type="file" id="imagem" name="imagem" placeholder="imagem" accept="image/*" required>
-
         <button type="submit" id="handleSubmit">Adicionar</button>
     </form>
+
+    <h2> Adicionar Marcador</h2>
+<form id="addMarkerForm">
+    <input type="number" id="latitude" name="latitude" step="any" placeholder="Latitude" required>
+    <input type="number" id="longitude" name="longitude" step="any" placeholder="Longitude" required>
+    <input type="text" id="estabelecimento" name="estabelecimento" placeholder="Estabelecimento" required>
+    <input type="text" id="description" name="popup" placeholder="Descrição" required>
+    <button type="submit">Adicionar</button>
+</form>
+
+
+<h2>Marcadores Existentes</h2>
+<div id="markerList"></div>
+
 
     <script src="JS/JSCatalog.js"></script>
 </body>
