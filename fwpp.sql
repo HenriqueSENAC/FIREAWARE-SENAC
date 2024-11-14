@@ -1,7 +1,7 @@
 create database db_fwpp;
 use db_fwpp;	
 
-create table cadastro(
+create table cadastro(	
 id int primary key auto_increment, 
 email varchar(255) not null unique, 
 senha varchar(255) not null,

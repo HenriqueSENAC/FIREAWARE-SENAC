@@ -27,7 +27,7 @@ async function login(request, response) {
                         .json({
                             success: true,
                             message: `Sucesso! Usuário conectado.`,
-                            data: results
+                            data: JSON.stringify(results)
                         });                    
                 } else {
                     if(request.body.senha != results[0].senha) { 

@@ -1,5 +1,6 @@
 // controllers/UserController.js
-const db = require('../config/db')
+const db = require('../config/db');
+const { connect } = require('../routes/UserRouter');
 
 const registerUser = (req, res) => {
     const { email, senha, cel } = req.body;
@@ -19,4 +20,40 @@ const registerUser = (req, res) => {
     });
 };
 
-module.exports = { registerUser };
+
+const updateUser = (req, res) => {
+    const { email, senha } = req.body;
+
+    // Certifique-se de ter uma condição WHERE que identifique o usuário único
+    const query = 'UPDATE cadastro SET email = ?, senha = ? WHERE id = ?';
+    
+    // Aqui, você precisará passar o ID do usuário como parâmetro
+    const userId = req.userId; // Suponha que o ID do usuário esteja em req.userId
+
+    db.query(query, [email, senha, userId], (error, result) => {
+        if (error) {
+            console.error('Erro ao atualizar perfil:', error);
+            return res.status(500).json({
+                success: false,
+                message: 'Erro ao atualizar o perfil',
+                data: error
+            });
+        }
+
+        if (result.affectedRows > 0) {
+            return res.status(200).json({
+                success: true,
+                message: 'Perfil atualizado com sucesso',
+                data: { email, senha }
+            });
+        } else {
+            return res.status(404).json({
+                success: false,
+                message: 'Usuário não encontrado ou sem alterações',
+                data: null
+            });
+        }
+    });
+};
+
+module.exports = { registerUser, updateUser };

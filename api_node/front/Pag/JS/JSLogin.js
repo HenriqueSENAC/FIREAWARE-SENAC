@@ -21,16 +21,14 @@ button.onclick = async function (e) {
             });
 
             let content = await response.json();
+            let dadosUsuario = JSON.parse(content.data)[0]
 
             if (content.success) {
-                // Salva o token ou ID do usuário no localStorage
-                if (content.token) {
-                    localStorage.setItem('authToken', content.token); // Armazena o token se o backend fornecer
-                } else if (content.userId) {
-                    localStorage.setItem('userId', content.userId); // Armazena o ID do usuário
-                }
                 
                 localStorage.setItem('userLoggedIn', 'true'); // Flag para indicar que o usuário está logado
+                // localStorage.setItem('dadosUsuario', dadosUsuario)
+                localStorage.setItem('userEmail', email);
+                localStorage.setItem('userPass', senha);
                 window.location.replace("MainPage.html");
             } else {
                 PSWarningLogin();

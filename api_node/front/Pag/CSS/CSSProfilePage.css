@@ -179,6 +179,8 @@ h1{
     margin: 10% 0 0 0;
     border-radius: 50%;
   }
+
+
   
 .fa-regular{
       color: var(--text-dm);
@@ -203,8 +205,8 @@ h3.inter-font{
 .infoForms{
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10%;
-  padding: 5% 0 0 0;
   height: 100%;
 }
 
@@ -219,9 +221,26 @@ h3.inter-font{
     height: 3vw;
 }
 
+.AccountInfo{
+  display: flex;
+  align-items: center;
+  background-color: var(--cinza);
+  color: var(--text-dm);
+  padding: 0 0 0 2%;
+  border-radius: 10px;
+  width: 25vw;
+  height: 3vw;
+}
+
 .Field{
   margin: 0 0 0 3%;
 }
+
+
+.CField{
+  margin: 0 0 0 3%;
+}
+
 
 .edit-input {
   display: flex;
@@ -233,13 +252,4 @@ h3.inter-font{
   padding: 0 0 0 3%;
   width: 70%;
   height: 50%;
-}
-
-.accountInfo{
-  display: flex;
-  width: 90%;
-  height: 30%;
-  border-radius: 10px;
-  background-color: var(--cinza);
-  color: var(--text-dm);
 }

@@ -1,9 +1,9 @@
 const { Router } = require('express');
+const { registerUser, updateUser } = require('../controllers/UserController');
 
 const router = Router();
 
-const { registerUser } = require('../controllers/UserController'); // Certifique-se de que o caminho esteja correto
-
-router.post('/user', registerUser); // Associe a rota '/user' com a função registerUser
+router.post('/user', registerUser);
+router.put('/user', updateUser);
 
 module.exports = router;

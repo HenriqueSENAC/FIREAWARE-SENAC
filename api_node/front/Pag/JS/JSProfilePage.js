@@ -1,33 +1,60 @@
 // Seleciona todos os elementos com a classe 'Field'
 const infoDisplays = document.querySelectorAll('.Field');
+const email = localStorage.getItem("userEmail")
+const senha = localStorage.getItem("userPass")
+// let usuarioDados = localStorage.getItem("dadosUsuario")
 
-function EditToggle() {
-    infoDisplays.forEach((infoDisplay) => {
-        if (infoDisplay.style.display === 'flex') {
-            // Esconde o elemento .Field
-            infoDisplay.style.display = 'none';
+document.addEventListener("DOMContentLoaded", function() {
+    // Define os placeholders para cada campo de input
 
-            // Cria um novo elemento de input e define o valor atual do .Field como valor do input
-            const inputField = document.createElement('input');
-            inputField.type = 'text';
-            inputField.value = infoDisplay.textContent; // Usa o conteúdo de texto do .Field
-            inputField.classList.add('edit-input'); // Classe para estilizar ou identificar os inputs
+    // Placeholder para o campo de Email
+    const emailInput = document.querySelector("#NameForm .edit-input");
+    emailInput.placeholder = email;
 
-            // Insere o input na mesma posição do elemento .Field
-            infoDisplay.parentNode.insertBefore(inputField, infoDisplay.nextSibling);
-        } else {
-            // Remove o campo de input, se existir
-            const inputField = infoDisplay.nextElementSibling;
-            if (inputField && inputField.classList.contains('edit-input')) {
-                // Atualiza o conteúdo do .Field com o valor do input
-                infoDisplay.textContent = inputField.value;
-                
-                // Remove o campo de input
-                inputField.remove();
-            }
+    // Placeholder para o campo de Senha
+    const passwordInput = document.querySelector("#PasswordForm .edit-input");
+    passwordInput.placeholder = senha;
+})
+ 
+function saveData() {
+    let useremail = document.getElementById("emailform").value;
+    let userpass = document.getElementById("senhaform").value;
 
-            // Mostra o elemento .Field novamente
-            infoDisplay.style.display = 'flex';
-        }
+    const updatedData = {
+        email: useremail,
+        senha: userpass
+    };
+
+    console.log(updatedData);
+
+    // Salva no localStorage
+    localStorage.setItem("userEmail", useremail);
+    localStorage.setItem("userPass", userpass);
+
+    // Atualiza no servidor
+    fetch('http://localhost:3005/api/put/user', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(updatedData)
+    })
+    .then(response => {
+        if (!response.ok) throw new Error('Erro ao salvar os dados no servidor');
+        return response.json();
+    })
+    .then(data => {
+        console.log('Resposta do servidor:', data);
+        alert('Dados salvos com sucesso!');
+    })
+    .catch(error => {
+        console.error('Erro:', error);
+        alert('Ocorreu um erro ao salvar os dados.');
     });
 }
+ 
+document.getElementById("saveButton").addEventListener("click", saveData);
+
+// Função para deslogar o usuário
+function logout() {
+    localStorage.removeItem('userLoggedIn');
+    window.location.replace("Login.html");
+  }
