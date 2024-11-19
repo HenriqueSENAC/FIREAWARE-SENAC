@@ -92,32 +92,39 @@ nav {
 
 /* CARDS */
 
-.row{
+.tela{
   display: flex;
-  align-items: center;
+  flex-direction: row;
   justify-content: space-between;
-  margin: 0 0 0 5%;
 }
 
 .card-section{
   display: flex;
-  align-items: center;
+  align-self: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.card-section2{
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  height: 100%;
 }
 
 .card{ 
   background-color: var(--cinza);
   border-radius: 3px;
-  height: 100%;
-  width: 25%; 
-  margin: 0 5% 10% 3%;
+  width: 75%; 
 }
 
-.card2{ 
+.card2 { 
   background-color: var(--cinza);
   border-radius: 3px;
-  height: 100%;
-  width: 25%; 
-  margin: 4% 5% 10% 3%;
+  width: 100%; 
+  height: 50%;
+  margin: 50px;
 }
 
 .log-in{
@@ -169,7 +176,6 @@ p{
 
 h60{
   margin: 0 0 0 2%;
-
 }
 
 .form{
@@ -190,7 +196,7 @@ h60{
   color: #474747;
   font-style: italic;
   text-decoration: underline;
-  font-size: 85%;
+  font-size: 75%;
 }
 
 .login-redirect:hover{
@@ -209,7 +215,7 @@ h60{
 }
 
 .EmailWarning{
-  width: 100%;
+  width: 50%;
   margin: 1% 1% 1% 5%;
   font-style: italic;
   font-weight: bold;
@@ -227,16 +233,6 @@ h60{
   color: white;
   display: none;  
 }
-/* 
-  .HiddenMessage{
-    width: 100%;
-    margin: 1% 1% 1% 5%;
-    font-style: italic;
-    font-weight: bold;
-    font-size: 70%;
-    color: red;
-    display: none;
-  } */
 
 /* INPUTS */
 input[name=TextInput] {
@@ -266,18 +262,12 @@ button{
     text-decoration: dashed;
 }
 
-.buttonAltMargin{
-  margin: 0 5% 0 0;
-}
-
 button:hover{
   transition-duration: 0.2s;
   background-color: var(--vermelho);
 }
 
-/* background */
-
-#background{
-  width: 952px;
-  height: 618%;
+.background{
+  display: flex;
+  justify-self: right;
 }

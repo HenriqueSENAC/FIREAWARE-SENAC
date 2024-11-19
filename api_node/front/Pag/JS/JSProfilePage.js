@@ -46,8 +46,9 @@ function saveData() {
         alert('Dados salvos com sucesso!');
     })
     .catch(error => {
-        console.error('Erro:', error);
-        alert('Ocorreu um erro ao salvar os dados.');
+            
+        // console.error('Erro:', error);
+        // alert('Ocorreu um erro ao salvar os dados.');
     });
 }
  

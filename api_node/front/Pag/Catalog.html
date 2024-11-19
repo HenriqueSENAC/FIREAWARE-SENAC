@@ -3,32 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adicionar Item ao Catálogo</title>
-    
+    <title>Painel de Controle</title>
+    <link rel="stylesheet" href="CSS/CSSCatalog.css">
+    <link rel="stylesheet" href="CSS/SymbolStorage.css"/>
 </head>
 <body>
-    <h2>Adicionar Item ao Catálogo</h2>
-    <form action="#" method="POST" enctype="multipart/form-data" id="formulario">
-        <input type="text" id="nome" name="item_name" placeholder="Nome" required>
-        <input type="text" id="descricao" name="item_description" placeholder="Descrição" required>
-        <input type="url" id="link" name="item_link" placeholder="Link/URL" required>
-        <input type="file" id="imagem" name="imagem" placeholder="imagem" accept="image/*" required>
-        <button type="submit" id="handleSubmit">Adicionar</button>
-    </form>
 
-    <h2> Adicionar Marcador</h2>
-<form id="addMarkerForm">
-    <input type="number" id="latitude" name="latitude" step="any" placeholder="Latitude" required>
-    <input type="number" id="longitude" name="longitude" step="any" placeholder="Longitude" required>
-    <input type="text" id="estabelecimento" name="estabelecimento" placeholder="Estabelecimento" required>
-    <input type="text" id="description" name="popup" placeholder="Descrição" required>
-    <button type="submit">Adicionar</button>
-</form>
+    <nav>
+        <section class="navFirstSection">
+            <img src="../Imgs/Logo.png">
+            <a href="ProfilePage.html" class="inter-font" id="btnProfile"><i class="gg-profile"> </i> Perfil</a>
+        </section>
 
+        <section class="nav-text inter-font">
+            <a href="MainPage.html" ><i class="gg-home"> </i>Home</a>
+            <a href="HelpPage.html"><i class="gg-add"> </i>Ajuda</a>
+        </section>
+    </nav>
 
-<h2>Marcadores Existentes</h2>
-<div id="markerList"></div>
+<div class="fullBody">
+    <section class="InputsSection">
+        <h2 class="inter-font">Adicionar Item ao Catálogo</h2>
+        <form action="#" method="POST" enctype="multipart/form-data" id="formulario">
+            <div class="inputsItself">
+                <input class="Input" type="text" id="nome" name="item_name" placeholder="Nome" required>
+                <input class="Input" type="text" id="descricao" name="item_description" placeholder="Descrição" required>
+                <input class="Input" type="url" id="link" name="item_link" placeholder="Link/URL" required>
+            </div>
+            <div class="authBtnS">
+                <label class="custom-file-upload inter-font" for="imagem">Enviar Imagem</label>
+                <input class="Input" type="file" id="imagem" name="imagem" accept="image/*" style="display:none" required>
+                <button class="ConfBtn" type="submit" id="handleSubmit">Adicionar</button>
+            </div>
+        </form>
+    </section>    
+    <section class="InputsSection">
+        <h2 class="inter-font"> Adicionar Marcador</h2>
+        <form id="addMarkerForm">
+            <div class="inputsItself">
+                <input class="Input" type="number" id="latitude" name="latitude" step="any" placeholder="Latitude" required>
+                <input class="Input" type="number" id="longitude" name="longitude" step="any" placeholder="Longitude" required>
+                <input class="Input" type="text" id="estabelecimento" name="estabelecimento" placeholder="Estabelecimento" required>
+                <input class="Input" type="text" id="description" name="popup" placeholder="Descrição" required>
+            </div>
+            <div class="authBtnS">
+                <button class="ConfBtn" type="submit">Adicionar</button>
+            </div>
+        </form>
+    </section>
 
+    <section class="MarkerHistory">
+        <h2 class="inter-font">Marcadores Adicionados</h2>
+        
+            <div class="MarkerBox" id="markerList"></div>
+    </section>
+</div>
 
     <script src="JS/JSCatalog.js"></script>
 </body>

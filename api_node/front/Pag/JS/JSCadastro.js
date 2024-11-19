@@ -54,7 +54,7 @@ function PSWarningSignin() {
 function EMailWarningSignin() {
     var Warning2 = document.getElementById('error-email-signin');
     if (Warning2.style.display === 'none') {
-        Warning2.style.display = 'block';
+        Warning2.style.display = 'flex';
         setTimeout(function () {
             Warning2.style.display = 'none';
         }, 5000);

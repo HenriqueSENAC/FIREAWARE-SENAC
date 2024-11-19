@@ -253,3 +253,12 @@ h3.inter-font{
   width: 70%;
   height: 50%;
 }
+
+.saveBtn{
+  background: var(--cinza-claro);
+  border-color: var(--cinza-escuro);
+  color: var(--text-dm);
+  border-radius: 10px;
+  width: 35%;
+  height: 10%;
+}
