@@ -19,6 +19,17 @@ item_img varchar(255) not null,
 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE TABLE markers (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    latitude DOUBLE NOT NULL,
+    longitude DOUBLE NOT NULL,
+    estabelecimento VARCHAR(255) NOT NULL,
+    descricao TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-29.788342316014266, -51.1504125286338
+
 insert into cadastro(id, email, senha, cel)
 values (1, "senac@senacrs.edu.br", "12345", "99 99999-9999");
 

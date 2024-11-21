@@ -78,40 +78,70 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 });
 
-// JSMainPage.js
+// Inicializa o mapa
+let map;
 
-// Inicialização do mapa
-const map = L.map('map').setView([-29.796523747827955, -51.15286481646456], 16);
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19 }).addTo(map);
+function initializeMap() {
+  map = L.map('map').setView([-29.79655731897039, -51.15308506118458], 16); // Coordenadas padrão (Unisinos)
 
-// Marcadores iniciais embutidos
-const initialMarkers = [
-    { coords: [-29.803457948306125, -51.1562964548087], popup: "<b>INSTALFIRE</b><br>Soluções contra Incêndio." },
-    { coords: [-29.811872626822254, -51.147364946097696], popup: "<b>Projetos EVITARE</b><br>Serviços de prevenção contra Incêndio" },
-    { coords: [-29.78014249567775, -51.141013475297676], popup: "<b>GURI</b><br>Sistemas Contra Incêndio" },
-    { coords: [-29.782322740493512, -51.128869065003016], popup: "<b>ECI-Equipamentos</b><br>Loja de equipamentos contra Incêndio" },
-    { coords: [-29.81866924122059, -51.16079807495008], popup: "<b>Sul Brasil Extintores</b><br>Loja de equipamentos contra Incêndio" }
-];
+  // Adicionar camada de mapa base do OpenStreetMap
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+  // Adiciona os marcadores iniciais embutidos
+  addMarkersToMap(initialMarkers);
+}
 
 // Função para adicionar marcadores ao mapa
 function addMarkersToMap(markers) {
-    markers.forEach(({ coords, popup }) => {
-        L.marker(coords).addTo(map).bindPopup(popup);
-    });
+  if (!map) {
+    console.error('Mapa não inicializado!');
+    return;
+  }
+
+  markers.forEach(marker => {
+    L.marker(marker.coords)
+      .addTo(map)
+      .bindPopup(marker.popup); // Exibe informações ao clicar no marcador
+  });
 }
 
-// Adiciona os marcadores iniciais
-addMarkersToMap(initialMarkers);
+// Carregar os marcadores do banco de dados e adicioná-los ao mapa
+async function loadMarkersFromDatabase() {
+  try {
+    const response = await fetch('http://localhost:3005/api/markers');
+    const result = await response.json();
 
-// Carrega e adiciona os marcadores salvos no localStorage
-function loadMarkersFromLocalStorage() {
-    const storedMarkers = JSON.parse(localStorage.getItem('markers')) || [];
-    addMarkersToMap(storedMarkers);
+    if (result.success) {
+      // Converte os dados recebidos em um formato esperado
+      const markerData = result.data.map(marker => ({
+        coords: [marker.latitude, marker.longitude],
+        popup: `<b>${marker.estabelecimento}</b><br>${marker.descricao}`
+      }));
+
+      // Adiciona os marcadores ao mapa
+      addMarkersToMap(markerData);
+    } else {
+      console.error('Erro no carregamento dos dados:', result.message);
+    }
+  } catch (err) {
+    console.error('Erro ao carregar marcadores do banco:', err);
+  }
 }
 
-// Carrega os marcadores do localStorage ao abrir a página
-loadMarkersFromLocalStorage();
+// Marcadores iniciais embutidos
+const initialMarkers = [
+  { coords: [-29.803457948306125, -51.1562964548087], popup: "<b>INSTALFIRE</b><br>Soluções contra Incêndio." },
+  { coords: [-29.811872626822254, -51.147364946097696], popup: "<b>Projetos EVITARE</b><br>Serviços de prevenção contra Incêndio" },
+  { coords: [-29.78014249567775, -51.141013475297676], popup: "<b>GURI</b><br>Sistemas Contra Incêndio" },
+  { coords: [-29.782322740493512, -51.128869065003016], popup: "<b>ECI-Equipamentos</b><br>Loja de equipamentos contra Incêndio" },
+  { coords: [-29.81866924122059, -51.16079807495008], popup: "<b>Sul Brasil Extintores</b><br>Loja de equipamentos contra Incêndio" }
+];
 
+// Carrega o mapa e os marcadores ao carregar a página
+document.addEventListener('DOMContentLoaded', () => {
+  initializeMap(); // Inicializa o mapa
+  loadMarkersFromDatabase(); // Carrega os marcadores do banco de dados
+});
 
 // Função para deslogar o usuário
 function logout() {

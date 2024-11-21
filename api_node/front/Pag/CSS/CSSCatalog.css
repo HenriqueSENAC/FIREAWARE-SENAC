@@ -184,7 +184,7 @@ h2{
 
 .NewMarker{
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   list-style-type: none;
   background: var(--cinza-claro);
@@ -206,7 +206,7 @@ h2{
 }
 
 .RemoveBtn{
-  margin: 0 0 0 5%;
+  margin: 0 5% 0 0;
   border-radius: 10px;
   width: 10vw;
   color: var(--input);

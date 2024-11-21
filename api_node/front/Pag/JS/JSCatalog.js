@@ -75,43 +75,81 @@ function renderMarkerList() {
 }
 
 
-// Função para adicionar um novo marcador ao localStorage
-document.getElementById('addMarkerForm').addEventListener('submit', function(event) {
+document.getElementById('addMarkerForm').addEventListener('submit', async function (event) {
     event.preventDefault();
 
     const latitude = parseFloat(document.getElementById('latitude').value);
     const longitude = parseFloat(document.getElementById('longitude').value);
     const estabelecimento = document.getElementById('estabelecimento').value;
-    const description = document.getElementById('description').value;
+    const descricao = document.getElementById('description').value;
 
-    // Cria um ID único para o marcador
-    const id = Date.now();
+    const newMarker = { latitude, longitude, estabelecimento, descricao };
 
-    const newMarker = { 
-        id, 
-        coords: [latitude, longitude], 
-        popup: `<b>${estabelecimento}</b><br>${description}` 
-    };
+    try {
+        const response = await fetch('http://localhost:3005/api/markers', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(newMarker),
+        });
+        const result = await response.json();
 
-    // Salva o novo marcador no localStorage
-    let markers = JSON.parse(localStorage.getItem('markers')) || [];
-    markers.push(newMarker);
-    localStorage.setItem('markers', JSON.stringify(markers));
-
-    alert("Marcador adicionado com sucesso!");
-    document.getElementById('addMarkerForm').reset();
-
-    renderMarkerList(); // Atualiza a lista de marcadores
+        if (result.success) {
+            alert('Marcador adicionado com sucesso!');
+            renderMarkerList(); // Atualizar lista
+        } else {
+            alert('Erro ao adicionar marcador');
+        }
+    } catch (err) {
+        console.error('Erro:', err);
+    }
 });
 
-// Função para remover um marcador específico pelo ID
-function removeMarker(id) {
-    let markers = JSON.parse(localStorage.getItem('markers')) || [];
-    markers = markers.filter(marker => marker.id !== id); // Remove o marcador com o ID correspondente
-    localStorage.setItem('markers', JSON.stringify(markers));
+async function renderMarkerList() {
+    const markerList = document.getElementById('markerList');
+    markerList.innerHTML = '';
 
-    renderMarkerList(); // Atualiza a lista após a remoção
+    try {
+        const response = await fetch('http://localhost:3005/api/markers');
+        const result = await response.json();
+
+        if (result.success) {
+            result.data.forEach(marker => {
+                const listDiv = document.createElement('div');
+                listDiv.className = "MarkerDiv";
+
+                const listItem = document.createElement('li');
+                listItem.className = "NewMarker";
+                listItem.textContent = marker.estabelecimento;
+
+                const removeButton = document.createElement('button');
+                removeButton.className = "RemoveBtn";
+                removeButton.textContent = 'Remover';
+                removeButton.onclick = () => removeMarker(marker.id);
+
+                listDiv.appendChild(listItem);
+                listItem.appendChild(removeButton);
+                markerList.appendChild(listDiv);
+            });
+        }
+    } catch (err) {
+        console.error('Erro ao carregar marcadores:', err);
+    }
 }
 
-// Chama renderMarkerList ao carregar a página para exibir os marcadores salvos
+async function removeMarker(id) {
+    try {
+        const response = await fetch(`http://localhost:3005/api/markers/${id}`, { method: 'DELETE' });
+        const result = await response.json();
+
+        if (result.success) {
+            renderMarkerList();
+        } else {
+            alert('Erro ao remover marcador');
+        }
+    } catch (err) {
+        console.error('Erro ao remover marcador:', err);
+    }
+}
+
+// Renderizar marcadores ao carregar a página
 document.addEventListener('DOMContentLoaded', renderMarkerList);
